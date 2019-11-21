@@ -5,6 +5,10 @@
 [![I](https://img.shields.io/github/issues/xuexiangjys/XUpdate.svg)](https://github.com/xuexiangjys/XUpdate/issues)
 [![Star](https://img.shields.io/github/stars/xuexiangjys/XUpdate.svg)](https://github.com/xuexiangjys/XUpdate)
 
+原项目地址：https://github.com/xuexiangjys/XUpdate
+
+因该开源框架资源与其他框架资源冲突，故修改资源名重新发布。
+
 一个轻量级、高可用性的Android版本更新框架。赶紧点击[使用说明文档](https://github.com/xuexiangjys/XUpdate/wiki)，体验一下吧！
 
 在提issue前，请先阅读[【提问的智慧】](https://xuexiangjys.blog.csdn.net/article/details/83344235)，并严格按照[issue模板](https://github.com/xuexiangjys/XUpdate/issues/new/choose)进行填写，节约大家的时间。
