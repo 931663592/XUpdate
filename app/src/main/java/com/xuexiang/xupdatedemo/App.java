@@ -62,10 +62,10 @@ public class App extends Application {
             public List<PageInfo> registerPages(Context context) {
                 return AppPageConfig.getInstance().getPages(); //自动注册页面
             }
-        }).debug("PageLog").enableWatcher(true).init(this);
+        }).debug("PageLog").enableWatcher(false).init(this);
 
         XAOP.init(this); //初始化插件
-        XAOP.debug(true); //日志打印切片开启
+        XAOP.debug(false); //日志打印切片开启
         //设置动态申请权限切片 申请权限被拒绝的事件响应监听
         XAOP.setOnPermissionDeniedListener(new PermissionUtils.OnPermissionDeniedListener() {
             @Override

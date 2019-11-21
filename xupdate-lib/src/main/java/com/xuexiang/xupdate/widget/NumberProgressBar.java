@@ -168,24 +168,24 @@ public class NumberProgressBar extends View {
         final TypedArray attributes = context.getTheme().obtainStyledAttributes(attrs, R.styleable.XUpdate_ProgressBar, defStyleAttr, 0);
 
         int default_reached_color = Color.rgb(66, 145, 241);
-        mReachedBarColor = attributes.getColor(R.styleable.XUpdate_ProgressBar_progress_reached_color, default_reached_color);
+        mReachedBarColor = attributes.getColor(R.styleable.XUpdate_ProgressBar_xupdate_progress_reached_color, default_reached_color);
         int default_unreached_color = Color.rgb(204, 204, 204);
-        mUnreachedBarColor = attributes.getColor(R.styleable.XUpdate_ProgressBar_progress_unreached_color, default_unreached_color);
+        mUnreachedBarColor = attributes.getColor(R.styleable.XUpdate_ProgressBar_xupdate_progress_unreached_color, default_unreached_color);
         int default_text_color = Color.rgb(66, 145, 241);
-        mTextColor = attributes.getColor(R.styleable.XUpdate_ProgressBar_progress_text_color, default_text_color);
-        mTextSize = attributes.getDimension(R.styleable.XUpdate_ProgressBar_progress_text_size, default_text_size);
+        mTextColor = attributes.getColor(R.styleable.XUpdate_ProgressBar_xupdate_progress_text_color, default_text_color);
+        mTextSize = attributes.getDimension(R.styleable.XUpdate_ProgressBar_xupdate_progress_text_size, default_text_size);
 
-        mReachedBarHeight = attributes.getDimension(R.styleable.XUpdate_ProgressBar_progress_reached_bar_height, default_reached_bar_height);
-        mUnreachedBarHeight = attributes.getDimension(R.styleable.XUpdate_ProgressBar_progress_unreached_bar_height, default_unreached_bar_height);
-        mOffset = attributes.getDimension(R.styleable.XUpdate_ProgressBar_progress_text_offset, default_progress_text_offset);
+        mReachedBarHeight = attributes.getDimension(R.styleable.XUpdate_ProgressBar_xupdate_progress_reached_bar_height, default_reached_bar_height);
+        mUnreachedBarHeight = attributes.getDimension(R.styleable.XUpdate_ProgressBar_xupdate_progress_unreached_bar_height, default_unreached_bar_height);
+        mOffset = attributes.getDimension(R.styleable.XUpdate_ProgressBar_xupdate_progress_text_offset, default_progress_text_offset);
 
-        int textVisible = attributes.getInt(R.styleable.XUpdate_ProgressBar_progress_text_visibility, PROGRESS_TEXT_VISIBLE);
+        int textVisible = attributes.getInt(R.styleable.XUpdate_ProgressBar_xupdate_progress_text_visibility, PROGRESS_TEXT_VISIBLE);
         if (textVisible != PROGRESS_TEXT_VISIBLE) {
             mIfDrawText = false;
         }
 
-        setProgress(attributes.getInt(R.styleable.XUpdate_ProgressBar_progress_current, 0));
-        setMax(attributes.getInt(R.styleable.XUpdate_ProgressBar_progress_max, 100));
+        setProgress(attributes.getInt(R.styleable.XUpdate_ProgressBar_xupdate_progress_current, 0));
+        setMax(attributes.getInt(R.styleable.XUpdate_ProgressBar_xupdate_progress_max, 100));
 
         attributes.recycle();
         initializePainters();

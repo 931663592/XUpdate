@@ -56,15 +56,15 @@ import static android.app.Activity.RESULT_OK;
 @Page(name = "XUpdate 版本更新")
 public class MainFragment extends XPageSimpleListFragment {
 
+//    private String mMyUpdateUrl = "http://172.18.32.202:8080/update_test.json";
+    private String mMyUpdateUrl = "http://172.18.32.202:8080/update_test2.json";
     private String mUpdateUrl = "https://raw.githubusercontent.com/xuexiangjys/XUpdate/master/jsonapi/update_test.json";
-
     private String mUpdateUrl2 = "https://raw.githubusercontent.com/xuexiangjys/XUpdate/master/jsonapi/update_forced.json";
-
     private String mUpdateUrl3 = "https://raw.githubusercontent.com/xuexiangjys/XUpdate/master/jsonapi/update_custom.json";
-
     private String mDownloadUrl = "https://raw.githubusercontent.com/xuexiangjys/XUpdate/master/apk/xupdate_demo_1.0.2.apk";
 
     private final static int REQUEST_CODE_SELECT_APK_FILE = 1000;
+
     @Override
     protected List<String> initSimpleData(List<String> lists) {
         lists.add("获取文件的MD5值");
@@ -90,49 +90,50 @@ public class MainFragment extends XPageSimpleListFragment {
                 break;
             case 1:
                 XUpdate.newBuild(getActivity())
-                        .updateUrl(mUpdateUrl)
+                        .updateUrl(mMyUpdateUrl)
                         .update();
                 break;
             case 2:
                 XUpdate.newBuild(getActivity())
-                        .updateUrl(mUpdateUrl)
+                        .updateUrl(mMyUpdateUrl)
                         .supportBackgroundUpdate(true)
                         .update();
                 break;
             case 3:
                 XUpdate.newBuild(getActivity())
-                        .updateUrl(mUpdateUrl)
+                        .updateUrl(mMyUpdateUrl)
                         .isAutoMode(true) //如果需要完全无人干预，自动更新，需要root权限【静默安装需要】
                         .update();
                 break;
             case 4:
                 XUpdate.newBuild(getActivity())
-                        .updateUrl(mUpdateUrl2)
+                        .updateUrl(mMyUpdateUrl)
                         .update();
                 break;
             case 5:
                 XUpdate.newBuild(getActivity())
-                        .updateHttpService(new XHttpUpdateHttpService("https://raw.githubusercontent.com"))
-                        .updateUrl("/xuexiangjys/XUpdate/master/jsonapi/update_test.json")
+                        .updateHttpService(new XHttpUpdateHttpService("http://172.18.32.202:8080"))
+                        .updateUrl("/update_test.json")
                         .themeColor(ResUtils.getColor(R.color.update_theme_color))
                         .topResId(R.mipmap.bg_update_top)
                         .update();
                 break;
             case 6:
                 XUpdate.newBuild(getActivity())
-                        .updateUrl(mUpdateUrl3)
+                        .updateUrl(mMyUpdateUrl)
                         .updateParser(new CustomUpdateParser())
                         .update();
                 break;
             case 7:
                 XUpdate.newBuild(getActivity())
-                        .updateUrl(mUpdateUrl3)
+                        .updateUrl(mMyUpdateUrl)
                         .updateChecker(new DefaultUpdateChecker() {
                             @Override
                             public void onBeforeCheck() {
                                 super.onBeforeCheck();
                                 CProgressDialogUtils.showProgressDialog(getActivity(), "查询中...");
                             }
+
                             @Override
                             public void onAfterCheck() {
                                 super.onAfterCheck();
@@ -206,7 +207,6 @@ public class MainFragment extends XPageSimpleListFragment {
             }
         }
     }
-
 
 
     @Override
